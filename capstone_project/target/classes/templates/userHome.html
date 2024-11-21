@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard - JSP BUS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* (Your existing styles) */
+        body {
+            background-image: url('/busBackground2.jpg'); /* Add your image URL here */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            min-height: 100vh; /* Ensures the body takes up the full height of the viewport */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .btn {
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-outline-secondary {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .heading {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .logout-btn {
+            background-color: #ff3e00;
+            color: white;
+            border-radius: 25px;
+            padding: 8px 20px;
+            transition: background-color 0.3s;
+        }
+        .logout-btn:hover {
+            background-color: #d63500;
+        }
+
+        /* Updated header style */
+        .bg-light {
+            background-color: white !important; /* White background for the header block */
+            border-top: 3px solid #333; /* Adds top border */
+            border-bottom: 3px solid #ddd; /* Adds bottom border */
+            padding: 20px 0; /* Ensures consistent spacing */
+        }
+
+        .bg-light .text-danger {
+            color: #dc3545; /* Keeps the "JSP BUS" text red */
+        }
+
+        .bg-light .text-muted {
+            color: #6c757d; /* Keeps the subtitle in muted gray */
+        }
+
+        .bg-light .logout-btn {
+            background-color: #ff3e00;
+            color: white;
+            border-radius: 25px;
+            padding: 8px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .bg-light .logout-btn:hover {
+            background-color: #d63500;
+        }
+
+        .bg-light p, .bg-light h4, .bg-light small {
+            color: black; /* Ensures all text in the block is readable */
+        }
+
+        /* Footer Style */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #f8b400;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar and Header -->
+<div class="border-bottom py-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9 text-center text-md-start">
+                <h4 class="text-danger mb-1"><i>JSP BUS</i></h4>
+                <small class="">Booking Reservation - User Dashboard</small>
+                <p class="mt-2"><strong>Hi,</strong> <span th:text="${userDetail.name}">User</span></p>
+            </div>
+
+            <!-- Right side: Logout button -->
+            <div class="col-md-3 text-end">
+                <a th:href="@{/logout}" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<div class="container text-center">
+    <h2 class="heading">Welcome to Your Booking Dashboard</h2>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a th:href="@{/searchBuses}" class="btn btn-success">Search Buses</a>
+        <a th:href="@{/feedback}" class="btn btn-warning">Add Feedback</a>
+        <a th:href="@{/allBookings}" class="btn btn-primary">View Bookings</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; <strong>JSP BUS</strong> 2024. All rights reserved. <br>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-wQDYR1hPuF8f5JmW69vdFt3Lcn5EjYtrtmIfXDSVdKghPQBCT6kZ9vMGuKqWfj2x" crossorigin="anonymous"></script>
+</body>
+</html>
