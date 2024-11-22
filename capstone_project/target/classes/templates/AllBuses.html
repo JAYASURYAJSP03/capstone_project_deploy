@@ -43,9 +43,9 @@
         /* Smaller button styles */
         .btn-primary, .btn-info, .btn-warning, .btn-danger {
             font-weight: 600;
-            padding: 6px 12px;  /* Smaller padding for compact buttons */
-            font-size: 14px;  /* Slightly smaller font size */
-            border-radius: 20px;  /* Slightly rounded buttons */
+            padding: 6px 12px;
+            font-size: 14px;
+            border-radius: 20px;
             transition: background-color 0.3s ease;
         }
 
@@ -85,17 +85,20 @@
             background-color: #c82333;
         }
 
-        /* Adjust buttons for smaller screens */
+        /* Specific width for add and back buttons */
+        .btn-small-width {
+            width: 150px; /* Adjust the width as needed */
+        }
+
         @media (max-width: 768px) {
             .table th, .table td {
                 font-size: 14px;
             }
 
-            /* Maintain small button size even on mobile */
             .btn-primary, .btn-info, .btn-warning, .btn-danger {
                 width: 100%;
                 margin-top: 10px;
-                padding: 6px 10px;  /* Ensure small padding on smaller screens */
+                padding: 6px 10px;
             }
 
             h2 {
@@ -110,8 +113,8 @@
     <h2><i>BUS MANAGEMENT</i></h2>
 </div>
 
-<!-- Add Bus Button (Smaller size) -->
-<a th:href="@{/addBus}" class="btn btn-info mx-5 mt-3 d-block mx-auto">Add New Bus</a>
+<!-- Add Bus Button with smaller width -->
+<a th:href="@{/addBus}" class="btn btn-info btn-small-width mx-5 mt-3 d-block mx-auto">Add New Bus</a>
 
 <div class="container mt-5 text-center">
     <!-- Table of Buses -->
@@ -144,8 +147,8 @@
     </table>
 </div>
 
-<!-- Back Button (Smaller size) -->
-<a th:href="@{/home/admin}" class="btn btn-info mx-5 mt-3 d-block mx-auto">Back to Home</a>
+<!-- Back Button with smaller width -->
+<a th:href="@{/home/admin}" class="btn btn-info btn-small-width mx-5 mt-3 d-block mx-auto">Back to Home</a>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

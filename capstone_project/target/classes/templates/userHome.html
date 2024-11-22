@@ -21,7 +21,7 @@
         }
 
         .navbar {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
         }
         .container {
             background-color: rgba(0, 0, 0, 0.7);
@@ -102,10 +102,13 @@
         .bg-light p, .bg-light h4, .bg-light small {
             color: black; /* Ensures all text in the block is readable */
         }
+        .border-bottom {
+            border-bottom: none !important;
+        }
 
         /* Footer Style */
         .footer {
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -132,7 +135,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-9 text-center text-md-start">
-                <h4 class="text-danger mb-1"><i>JSP BUS</i></h4>
+                <h4 class="text-danger mb-1"><i><b>JSP BUS</b></i></h4>
                 <small class="">Booking Reservation - User Dashboard</small>
                 <p class="mt-2"><strong>Hi,</strong> <span th:text="${userDetail.name}">User</span></p>
             </div>
