@@ -35,6 +35,6 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public List<Bus> find( String source,String destination, String date) {
-        return busRepository.findBySourceAndDestinationAndDate(source,destination,date);
+        return busRepository.findBySourceIgnoreCaseAndDestinationIgnoreCaseAndDate(source.trim(),destination.trim(),date);
     }
 }

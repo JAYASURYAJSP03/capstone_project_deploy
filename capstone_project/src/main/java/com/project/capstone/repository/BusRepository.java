@@ -10,4 +10,6 @@ import java.util.List;
 public interface BusRepository extends JpaRepository<Bus,Long> {
     boolean existsById(Long id);
     List<Bus> findBySourceAndDestinationAndDate(String source, String destination, String date);
+
+    List<Bus> findBySourceIgnoreCaseAndDestinationIgnoreCaseAndDate(String source, String destination, String date);
 }
