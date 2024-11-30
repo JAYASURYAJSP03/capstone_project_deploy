@@ -6,7 +6,9 @@ import com.project.capstone.service.BusService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -15,7 +17,9 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public List<Bus> getAllBuses() {
-        return busRepository.findAll();
+        return busRepository.findAll().stream()
+                .sorted(Comparator.comparingLong(Bus::getId).thenComparing(Bus::getBusName))
+                .collect(Collectors.toList());
     }
 
     @Override

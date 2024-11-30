@@ -25,7 +25,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public List<Booking> getAllById(Long id) {
         return userRepository.findBookingsByUserId(id).stream().sorted(Comparator
-                        .comparing(Booking::getId)
+                        .comparingLong(Booking::getId)
                         .thenComparing(Booking::getDate))
                         .collect(Collectors.toList());
     }
