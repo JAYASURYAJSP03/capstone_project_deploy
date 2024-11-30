@@ -7,7 +7,9 @@ import com.project.capstone.service.BookingService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -22,7 +24,10 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public List<Booking> getAllById(Long id) {
-        return userRepository.findBookingsByUserId(id);
+        return userRepository.findBookingsByUserId(id).stream().sorted(Comparator
+                        .comparing(Booking::getId)
+                        .thenComparing(Booking::getDate))
+                        .collect(Collectors.toList());
     }
 
     @Override
